@@ -8,7 +8,7 @@ export type Activity = {
 		havo: number;
 	};
 	ownMaterials: boolean;
-}
+};
 
 export let curriculum: Activity[] = [
 	{
@@ -18,9 +18,9 @@ export let curriculum: Activity[] = [
 		link: "https://play.coderius.nl/",
 		order: {
 			vwo: 2,
-			havo: 2
+			havo: 2,
 		},
-		ownMaterials: true
+		ownMaterials: true,
 	},
 	{
 		title: "Robotica",
@@ -29,9 +29,9 @@ export let curriculum: Activity[] = [
 		link: "https://robotica.coderius.nl/",
 		order: {
 			vwo: 3,
-			havo: 3
+			havo: 3,
 		},
-		ownMaterials: true
+		ownMaterials: true,
 	},
 	{
 		title: "Vulnerable Web Application",
@@ -40,9 +40,9 @@ export let curriculum: Activity[] = [
 		link: "https://dvwa.coderius.nl/",
 		order: {
 			vwo: 5,
-			havo: 5
+			havo: 5,
 		},
-		ownMaterials: true
+		ownMaterials: true,
 	},
 	{
 		title: "Godot Tutorial",
@@ -51,16 +51,18 @@ export let curriculum: Activity[] = [
 		link: "https://godot.coderius.nl/",
 		order: {
 			vwo: 6,
-			havo: 6
+			havo: 6,
 		},
-		ownMaterials: true
-	}
+		ownMaterials: true,
+	},
 ];
 
-export let ownCurriculum: Activity[] = curriculum.filter(activity => activity.ownMaterials);
+export let ownCurriculum: Activity[] = curriculum.filter(
+	(activity) => activity.ownMaterials,
+);
 
 export let levelColors: { [key in Activity["level"]]: string } = {
-	"Beginner": "green",
-	"Medium": "orange",
-	"Advanced": "red"
-}
+	Beginner: "green",
+	Medium: "orange",
+	Advanced: "red",
+};
