@@ -3,8 +3,11 @@ export type Activity = {
     labels: string[];
     level: "Beginner" | "Medium" | "Advanced";
     link: string;
-    order: number;
-		ownMaterials: boolean;
+    order: {
+		vwo: number;
+		havo: number;
+	};
+	ownMaterials: boolean;
 }
 
 export let curriculum: Activity[] = [
