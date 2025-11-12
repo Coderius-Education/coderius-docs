@@ -16,17 +16,24 @@ export let curriculum: Activity[] = [
     },
     {
         title: "Robotica",
-        labels: ["Robotics", "Python", "Building"],
+        labels: ["Robotics", "Python"],
         level: "Beginner",
         link: "https://robotica.coderius.nl/",
         order: 2
     },
     {
-        title: "Damn Vulnerable Web Application",
+        title: "Vulnerable Web Application",
         labels: ["Security", "Web"],
-        level: "Medium",
+        level: "Advanced",
         link: "https://dvwa.coderius.nl/",
-        order: 5
+        order: 3
+    },
+    {
+        title: "Godot Tutorial",
+        labels: ["Game Development", "Godot", "2D", "3D", "GDScript"],
+        level: "Medium",
+        link: "https://godot.coderius.nl/",
+        order: 4
     }
 ];
 

@@ -111,7 +111,7 @@
         <Card.Root class="mr-2 w-5/12">
             <Card.Header>
                 <Card.Title class="text-4xl">Lesmateriaal</Card.Title>
-                <Card.Description class="text-xl">Wij maken ons eigen lesmateriaal, gratis voor niets</Card.Description>
+                <Card.Description class="text-xl">Wij maken ons eigen lesmateriaal</Card.Description>
             </Card.Header>
             <Card.Content class="text-sm">
                 <p>Wij kijken continu naar manieren om ons lesmateriaal te verbeteren, didactisch en inhoudelijk.</p>
