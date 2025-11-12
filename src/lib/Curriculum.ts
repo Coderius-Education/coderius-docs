@@ -16,23 +16,32 @@ export let curriculum: Activity[] = [
         labels: ["Python", "Game Development", "2D"],
         level: "Beginner",
         link: "https://play.coderius.nl/",
-        order: 2,
-				ownMaterials: true
+        order: {
+			vwo: 2,
+			havo: 2
+		},
+		ownMaterials: true
     },
     {
         title: "Robotica",
         labels: ["Robotics", "Python"],
         level: "Beginner",
         link: "https://robotica.coderius.nl/",
-        order: 3,
-				ownMaterials: true
+        order: {
+			vwo: 3,
+			havo: 3
+		},
+		ownMaterials: true
     },
     {
         title: "Vulnerable Web Application",
         labels: ["Security", "Web"],
         level: "Advanced",
         link: "https://dvwa.coderius.nl/",
-        order: 5,
+        order: {
+			vwo: 5,
+			havo: 5
+		},
         ownMaterials: true
     },
     {
@@ -40,7 +49,10 @@ export let curriculum: Activity[] = [
         labels: ["Game Development", "Godot", "2D", "3D", "GDScript"],
         level: "Medium",
         link: "https://godot.coderius.nl/",
-        order: 6,
+        order: {
+			vwo: 6,
+			havo: 6
+		},
         ownMaterials: true
     }
 ];
