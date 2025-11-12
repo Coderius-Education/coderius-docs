@@ -2,22 +2,22 @@
     import * as Card from "$lib/components/ui/card/index.js";
     import { Badge } from "$lib/components/ui/badge";
     import { Button } from "$lib/components/ui/button";
-    import {curriculum, levelColors} from "$lib/Curriculum.ts";
+    import {ownCurriculum, levelColors} from "$lib/Curriculum.ts";
     import {cn} from "$lib/utils.ts";
     import { Separator } from "$lib/components/ui/separator/index.js";
 
 
     // Extract all unique labels from documents
     $: allLabels = Array.from(
-      new Set(curriculum.flatMap(activity => activity.labels))
+      new Set(ownCurriculum.flatMap(activity => activity.labels))
     ).sort();
 
     let selectedLabels: string[] = [];
 
     // Filter documents based on selected labels
     $: filteredCurriculum = selectedLabels.length === 0
-      ? curriculum
-      : curriculum.filter(activity =>
+      ? ownCurriculum
+      : ownCurriculum.filter(activity =>
         selectedLabels.every(label => activity.labels.includes(label))
       );
 
