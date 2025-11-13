@@ -114,11 +114,13 @@
                 <Card.Description class="text-xl">Wij maken ons eigen lesmateriaal, gratis voor niets</Card.Description>
             </Card.Header>
             <Card.Content class="text-sm">
-                <p>Wij kijken continu naar manieren om ons lesmateriaal te verbeteren, didactisch en inhoudelijk.</p>
-                <p>Ons lesmateriaal is open source en kan door iedereen gebruikt en aangepast worden.</p>
-                <p>Het is gebaseerd op vaak zelf gebouwde tools en frameworks, zodat we de beste leerervaring kunnen bieden.</p>
-                <p>We moedigen leraren aan om ons materiaal te gebruiken en aan te passen aan hun eigen behoeften.</p>
-                <p>Heb je suggesties of wil je zelf lesmateriaal aanleveren? Neem dan contact met ons op!</p>
+                <p>
+                    Wij kijken continu naar manieren om ons lesmateriaal te verbeteren, didactisch en inhoudelijk.
+                    Ons lesmateriaal is open source en kan door iedereen gebruikt en aangepast worden.
+                    Het is gebaseerd op vaak zelf gebouwde tools en frameworks, zodat we de beste leerervaring kunnen bieden.
+                    We moedigen leraren aan om ons materiaal te gebruiken en aan te passen aan hun eigen behoeften.
+                    Heb je suggesties of wil je zelf lesmateriaal aanleveren? Neem dan contact met ons op!
+                </p>
             </Card.Content>
         </Card.Root>
         <Card.Root class="w-7/12">
@@ -127,11 +129,13 @@
                 <Card.Description class="text-lg">Onze visie is gebaseerd op leren met de praktijk</Card.Description>
             </Card.Header>
             <Card.Content class="text-sm">
-                <p>Wij geloven dat leren het beste gebeurt door te doen. Daarom is ons lesmateriaal ontworpen om studenten actief te betrekken bij het leerproces.</p>
-                <p>Onze cursussen bevatten veel praktische oefeningen, projecten en real-world voorbeelden om de concepten tot leven te brengen.</p>
-                <p>We streven ernaar om lesmateriaal te creëren dat niet alleen informatief is, maar ook leuk en boeiend.</p>
-                <p>Door studenten de kans te geven om hun vaardigheden in de praktijk te brengen, bereiden we hen beter voor op echte uitdagingen in de technologie-industrie.</p>
-                <p>Samen met docenten werken we continu aan het verbeteren van ons materiaal om de leerervaring te optimaliseren.</p>
+                <p>
+                    Wij geloven dat leren het beste gebeurt door te doen. Daarom is ons lesmateriaal ontworpen om studenten actief te betrekken bij het leerproces.
+                    Onze cursussen bevatten veel praktische oefeningen, projecten en real-world voorbeelden om de concepten tot leven te brengen
+                    We streven ernaar om lesmateriaal te creëren dat niet alleen informatief is, maar ook leuk en boeiend.
+                    Door studenten de kans te geven om hun vaardigheden in de praktijk te brengen, bereiden we hen beter voor op echte uitdagingen in de technologie-industrie.
+                    Samen met docenten werken we continu aan het verbeteren van ons materiaal om de leerervaring te optimaliseren.
+                </p>
             </Card.Content>
         </Card.Root>
     </div>
