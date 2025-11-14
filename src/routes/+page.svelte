@@ -103,67 +103,37 @@ function openLink(link: string) {
 		{/if}
 	</div>
 
+    <div class="flex mt-8">
+        <Card.Root class="mr-2 w-5/12">
+            <Card.Header>
+                <Card.Title class="text-4xl">Lesmateriaal</Card.Title>
+                <Card.Description class="text-xl">Wij maken ons eigen lesmateriaal, gratis voor niets</Card.Description>
+            </Card.Header>
+            <Card.Content class="text-sm">
+                <p>
+                    Wij blijven voortdurend zoeken naar manieren om ons lesmateriaal te verbeteren, zowel didactisch als inhoudelijk. 
+                    Al ons lesmateriaal is open source, zodat iedereen het vrij kan gebruiken, aanpassen en verder ontwikkelen. 
+                    Veel van het materiaal is opgebouwd met eigen ontwikkelde tools en frameworks, waarmee we de best mogelijke leerervaring willen creëren. 
+                    We nodigen leraren van harte uit om onze lessen te gebruiken, aan te passen en te delen op een manier die past bij hun leerlingen. 
+                    Heb je ideeën, suggesties of wil je zelf bijdragen aan nieuw lesmateriaal? Neem dan gerust contact met ons op!
+                </p>
+            </Card.Content>
+        </Card.Root>
+        <Card.Root class="w-7/12">
+            <Card.Header>
+                <Card.Title class="text-4xl">Visie</Card.Title>
+                <Card.Description class="text-lg">Onze visie is gebaseerd op leren met de praktijk</Card.Description>
+            </Card.Header>
+            <Card.Content class="text-sm">
+                <p>
+                    Wij geloven dat leren het beste gebeurt door te doen. Daarom is ons lesmateriaal zo ontwikkeld dat studenten actief worden betrokken bij het leerproces. 
+                    In onze cursussen combineren we theorie met praktische opdrachten, projecten en realistische voorbeelden die de leerstof tot leven brengen. 
+                    Ons doel is om lesmateriaal te maken dat niet alleen informatief is, maar ook inspirerend en leuk om mee te werken. 
+                    Door studenten volop de kans te geven hun kennis direct toe te passen, bereiden we hen beter voor op de echte uitdagingen binnen de technologie-industrie. 
+                    Samen met docenten blijven we ons materiaal voortdurend verbeteren, zodat de leerervaring steeds beter en effectiever wordt.
+                </p>
+            </Card.Content>
+        </Card.Root>
+    </div>
 	<Separator class="my-4" />
-
-	<div class="mt-8 flex">
-		<Card.Root class="mr-2 w-5/12">
-			<Card.Header>
-				<Card.Title class="text-4xl">Lesmateriaal</Card.Title>
-				<Card.Description class="text-xl">Wij maken ons eigen lesmateriaal</Card.Description
-				>
-			</Card.Header>
-			<Card.Content class="text-sm">
-				<p>
-					Wij kijken continu naar manieren om ons lesmateriaal te verbeteren, didactisch
-					en inhoudelijk.
-				</p>
-				<p>
-					Ons lesmateriaal is open source en kan door iedereen gebruikt en aangepast
-					worden.
-				</p>
-				<p>
-					Het is gebaseerd op vaak zelf gebouwde tools en frameworks, zodat we de beste
-					leerervaring kunnen bieden.
-				</p>
-				<p>
-					We moedigen leraren aan om ons materiaal te gebruiken en aan te passen aan hun
-					eigen behoeften.
-				</p>
-				<p>
-					Heb je suggesties of wil je zelf lesmateriaal aanleveren? Neem dan contact met
-					ons op!
-				</p>
-			</Card.Content>
-		</Card.Root>
-		<Card.Root class="w-7/12">
-			<Card.Header>
-				<Card.Title class="text-4xl">Visie</Card.Title>
-				<Card.Description class="text-lg"
-					>Onze visie is gebaseerd op leren met de praktijk</Card.Description
-				>
-			</Card.Header>
-			<Card.Content class="text-sm">
-				<p>
-					Wij geloven dat leren het beste gebeurt door te doen. Daarom is ons lesmateriaal
-					ontworpen om studenten actief te betrekken bij het leerproces.
-				</p>
-				<p>
-					Onze cursussen bevatten veel praktische oefeningen, projecten en real-world
-					voorbeelden om de concepten tot leven te brengen.
-				</p>
-				<p>
-					We streven ernaar om lesmateriaal te creëren dat niet alleen informatief is,
-					maar ook leuk en boeiend.
-				</p>
-				<p>
-					Door studenten de kans te geven om hun vaardigheden in de praktijk te brengen,
-					bereiden we hen beter voor op echte uitdagingen in de technologie-industrie.
-				</p>
-				<p>
-					Samen met docenten werken we continu aan het verbeteren van ons materiaal om de
-					leerervaring te optimaliseren.
-				</p>
-			</Card.Content>
-		</Card.Root>
-	</div>
 </div>
