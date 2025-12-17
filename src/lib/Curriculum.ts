@@ -12,6 +12,17 @@ export type Activity = {
 
 export let curriculum: Activity[] = [
 	{
+		title: "Web Development",
+		labels: ["HTML", "CSS", "Javascript", "FastAPI"],
+		level: "Beginner",
+		link: "https://webdev.coderius.nl/",
+		order: {
+			vwo: 1,
+			havo: 1,
+		},
+		ownMaterials: true,
+	},
+	{
 		title: "Python Play",
 		labels: ["Python", "Game Development", "2D"],
 		level: "Beginner",
