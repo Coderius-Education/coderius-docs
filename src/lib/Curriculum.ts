@@ -13,9 +13,9 @@ export type Activity = {
 export let curriculum: Activity[] = [
 	{
 		title: "Web Development",
-		labels: ["HTML", "CSS", "Javascript", "FastAPI"],
+		labels: ["HTML", "CSS"],
 		level: "Beginner",
-		link: "https://webdev.coderius.nl/",
+		link: "https://web.coderius.nl/",
 		order: {
 			vwo: 1,
 			havo: 1,
@@ -45,6 +45,17 @@ export let curriculum: Activity[] = [
 		ownMaterials: true,
 	},
 	{
+		title: "Godot Tutorial",
+		labels: ["Game Development", "Godot", "2D", "3D", "GDScript"],
+		level: "Medium",
+		link: "https://godot.coderius.nl/",
+		order: {
+			vwo: 5,
+			havo: 5,
+		},
+		ownMaterials: true,
+	},
+	{
 		title: "Vulnerable Web Application",
 		labels: ["Security", "Web"],
 		level: "Advanced",
@@ -55,14 +66,14 @@ export let curriculum: Activity[] = [
 		},
 		ownMaterials: true,
 	},
-	{
-		title: "Godot Tutorial",
-		labels: ["Game Development", "Godot", "2D", "3D", "GDScript"],
-		level: "Medium",
-		link: "https://godot.coderius.nl/",
+		{
+		title: "Full stack web development",
+		labels: ["Javascript", "Python", "FastAPI"],
+		level: "Advanced",
+		link: "https://fullstack.coderius.nl/",
 		order: {
-			vwo: 6,
-			havo: 6,
+			vwo: 5,
+			havo: 5,
 		},
 		ownMaterials: true,
 	},
