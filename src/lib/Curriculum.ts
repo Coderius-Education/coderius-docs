@@ -1,87 +1,102 @@
 export type Activity = {
 	title: string;
-	labels: string[];
+	labels: string[]; // Keep for backward compatibility
+
+	// New categorical fields
+	programmingLanguages?: string[];
+	projectTypes?: string[];
+	operatingSystems?: string[];
+
 	level: "Beginner" | "Medium" | "Advanced";
 	link: string;
 	order: {
 		vwo: number;
 		havo: number;
 	};
-	ownMaterials: boolean;
 };
 
 export let curriculum: Activity[] = [
 	{
 		title: "Web Development",
-		labels: ["HTML", "CSS"],
+		labels: [],
+		programmingLanguages: ["HTML", "CSS"],
+		projectTypes: ["Web Development"],
+		operatingSystems: ["Windows", "Linux", "macOS", "ChromeOS"],
 		level: "Beginner",
 		link: "https://web.coderius.nl/",
 		order: {
 			vwo: 1,
 			havo: 1,
-		},
-		ownMaterials: true,
+		}
 	},
 	{
 		title: "Python Play",
-		labels: ["Python", "Game Development", "2D"],
+		labels: [],
+		programmingLanguages: ["Python"],
+		projectTypes: ["Game Development"],
+		operatingSystems: ["Windows", "Linux", "macOS"],
 		level: "Beginner",
 		link: "https://play.coderius.nl/",
 		order: {
 			vwo: 2,
 			havo: 2,
-		},
-		ownMaterials: true,
+		}
 	},
 	{
 		title: "Robotica",
 		labels: ["Robotics", "Python"],
+		programmingLanguages: ["Python"],
+		projectTypes: ["Robotics"],
+		operatingSystems: ["Windows", "Linux", "macOS"],
 		level: "Beginner",
 		link: "https://robotica.coderius.nl/",
 		order: {
 			vwo: 3,
 			havo: 3,
-		},
-		ownMaterials: true,
+		}
 	},
 	{
 		title: "Godot Tutorial",
-		labels: ["Game Development", "Godot", "2D", "3D", "GDScript"],
+		labels: [],
+		programmingLanguages: ["GDScript"],
+		projectTypes: ["Game Development"],
+		operatingSystems: ["Windows", "Linux", "macOS"],
 		level: "Medium",
 		link: "https://godot.coderius.nl/",
 		order: {
 			vwo: 5,
 			havo: 5,
-		},
-		ownMaterials: true,
+		}
 	},
 	{
 		title: "Vulnerable Web Application",
 		labels: ["Security", "Web"],
+		programmingLanguages: ["Linux Shell"],
+		projectTypes: ["Security", "Web Development"],
+		operatingSystems: ["Windows", "Linux"],
 		level: "Advanced",
 		link: "https://dvwa.coderius.nl/",
 		order: {
 			vwo: 5,
 			havo: 5,
-		},
-		ownMaterials: true,
+		}
 	},
 		{
 		title: "Full stack web development",
-		labels: ["Javascript", "Python", "FastAPI"],
+		labels: ["Javascript", "Python"],
+		programmingLanguages: ["HTML", "CSS", "JavaScript", "Python"],
+		projectTypes: ["Web Development"],
+		operatingSystems: ["Windows", "Linux", "macOS"],
 		level: "Advanced",
 		link: "https://fullstack.coderius.nl/",
 		order: {
 			vwo: 5,
 			havo: 5,
-		},
-		ownMaterials: true,
+		}
 	},
 ];
 
-export let ownCurriculum: Activity[] = curriculum.filter(
-	(activity) => activity.ownMaterials,
-);
+export let ownCurriculum: Activity[] = curriculum;
 
 export let levelColors: { [key in Activity["level"]]: string } = {
 	Beginner: "green",
