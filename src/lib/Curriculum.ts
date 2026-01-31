@@ -69,6 +69,17 @@ export let curriculum: Activity[] = [
 		}
 	},
 	{
+		title: "Godot Tutorial",
+		labels: ["Game Development", "Godot", "2D", "3D", "GDScript"],
+		level: "Medium",
+		link: "https://godot.coderius.nl/",
+		order: {
+			vwo: 5,
+			havo: 5,
+		},
+		ownMaterials: true,
+	},
+	{
 		title: "Vulnerable Web Application",
 		labels: ["Security", "Web"],
 		programmingLanguages: ["Linux Shell"],
