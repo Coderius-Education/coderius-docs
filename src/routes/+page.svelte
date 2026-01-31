@@ -5,28 +5,57 @@ import { Button } from "$lib/components/ui/button";
 import * as Card from "$lib/components/ui/card/index.js";
 import { Separator } from "$lib/components/ui/separator/index.js";
 import { cn } from "$lib/utils.ts";
+import FilterPanel from "$lib/components/FilterPanel.svelte";
 
-// Extract all unique labels from documents
-$: allLabels = Array.from(
-	new Set(ownCurriculum.flatMap((activity) => activity.labels)),
-).sort();
+// Filter state structure
+let selectedFilters = $state({
+	programmingLanguages: [] as string[],
+	projectTypes: [] as string[],
+	operatingSystems: [] as string[]
+});
 
-let selectedLabels: string[] = [];
+// Filter curriculum based on selected filters
+const filteredCurriculum = $derived.by(() => {
+	// If no filters selected, show all
+	const hasAnyFilter =
+		selectedFilters.programmingLanguages.length > 0 ||
+		selectedFilters.projectTypes.length > 0 ||
+		selectedFilters.operatingSystems.length > 0;
 
-// Filter documents based on selected labels
-$: filteredCurriculum =
-	selectedLabels.length === 0
-		? ownCurriculum
-		: ownCurriculum.filter((activity) =>
-				selectedLabels.every((label) => activity.labels.includes(label)),
+	if (!hasAnyFilter) return ownCurriculum;
+
+	// AND logic within each group: activity must have ALL selected items in that group
+	return ownCurriculum.filter((activity) => {
+		const matchesProgrammingLanguages =
+			selectedFilters.programmingLanguages.length === 0 ||
+			selectedFilters.programmingLanguages.every((lang) =>
+				activity.programmingLanguages?.includes(lang)
 			);
 
-function toggleLabel(label: string) {
-	if (selectedLabels.includes(label)) {
-		selectedLabels = selectedLabels.filter((l) => l !== label);
-	} else {
-		selectedLabels = [...selectedLabels, label];
-	}
+		const matchesProjectTypes =
+			selectedFilters.projectTypes.length === 0 ||
+			selectedFilters.projectTypes.every((type) =>
+				activity.projectTypes?.includes(type)
+			);
+
+		const matchesOperatingSystems =
+			selectedFilters.operatingSystems.length === 0 ||
+			selectedFilters.operatingSystems.every((os) =>
+				activity.operatingSystems?.includes(os)
+			);
+
+		// AND logic between groups: all groups must match
+		return (
+			matchesProgrammingLanguages &&
+			matchesProjectTypes &&
+			matchesOperatingSystems
+		);
+	});
+});
+
+// Handle filter updates from FilterPanel
+function handleFilterChange(newFilters: typeof selectedFilters) {
+	selectedFilters = newFilters;
 }
 
 function openLink(link: string) {
@@ -35,51 +64,36 @@ function openLink(link: string) {
 </script>
 
 <div class="mx-auto w-[96%]">
-	<div class="mt-8">
-		<h1 class="text-center text-7xl font-bold">Coderius Education</h1>
+	<div class="mb-12 mt-8">
+		<h1 class="text-center text-5xl font-bold">Coderius Education</h1>
 	</div>
 
 	<div>
 		<!-- Filter Section -->
-		<div class="mb-8">
-			<h2 class="mb-4 text-lg font-semibold">Filter Labels</h2>
-			<div class="flex flex-wrap gap-2">
-				{#each allLabels as label}
-					<Badge
-						variant={selectedLabels.includes(label) ? 'default' : 'secondary'}
-						class="cursor-pointer px-3 py-1 transition-opacity hover:opacity-80"
-						onclick={() => toggleLabel(label)}
-					>
-						{label}
-					</Badge>
-				{/each}
-			</div>
-		</div>
+		<FilterPanel
+			activities={ownCurriculum}
+			{selectedFilters}
+			onFilterChange={handleFilterChange}
+		/>
 
 		<!-- Documents Grid -->
-		<div class="mb-6">
+		<div class="mb-6 flex items-baseline gap-3">
 			<h2 class="text-2xl font-bold">Lesmateriaal</h2>
-			<p class="mt-1 text-sm">{filteredCurriculum.length} cursussen gevonden</p>
+			<p class="text-sm text-white-600">{filteredCurriculum.length} cursussen gevonden</p>
 		</div>
 
 		<div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
 			{#each filteredCurriculum as curriculum}
 				<Card.Root class="flex h-full flex-col">
 					<Card.Header>
-						<Card.Title class="text-lg">{curriculum.title}</Card.Title>
-						<div class="mt-3 flex flex-wrap gap-2">
-							<!--            Display curriculum level as badge -->
+						<div class="flex items-center gap-3">
+							<Card.Title class="text-lg">{curriculum.title}</Card.Title>
 							<Badge
 								variant="default"
-								class={cn('text-xs ', levelColors[curriculum.level])}
+								class={cn('text-xs whitespace-nowrap', levelColors[curriculum.level])}
 							>
-								Niveau: {curriculum.level}
+								{curriculum.level}
 							</Badge>
-							{#each curriculum.labels as label}
-								<Badge variant="outline" class="text-xs">
-									{label}
-								</Badge>
-							{/each}
 						</div>
 					</Card.Header>
 					<Card.Content class="mt-auto">
@@ -96,7 +110,16 @@ function openLink(link: string) {
 				<p class="text-lg text-gray-500">
 					Geen lesmaterialen gevonden met de geselecteerde filters.
 				</p>
-				<Button variant="outline" class="mt-4" onclick={() => (selectedLabels = [])}>
+				<Button
+					variant="outline"
+					class="mt-4"
+					onclick={() =>
+						(selectedFilters = {
+							programmingLanguages: [],
+							projectTypes: [],
+							operatingSystems: []
+						})}
+				>
 					Leeg filters
 				</Button>
 			</div>
