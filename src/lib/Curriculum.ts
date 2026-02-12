@@ -56,6 +56,19 @@ export let curriculum: Activity[] = [
 		}
 	},
 	{
+		title: 'Code Editor',
+		labels: [],
+		programmingLanguages: [],
+		projectTypes: ["Code Editor"],
+		operatingSystems: ["Windows", "Linux", "macOS"],
+		level: "Beginner",
+		link: "https://editor.coderius.nl/",
+		order: {
+			vwo: 2,
+			havo: 2,
+		}
+	},
+	{
 		title: "Robotica",
 		labels: ["Robotics", "Python"],
 		programmingLanguages: ["Python"],
