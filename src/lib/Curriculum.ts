@@ -30,6 +30,19 @@ export let curriculum: Activity[] = [
 		}
 	},
 	{
+		title: "Python",
+		labels: [],
+		programmingLanguages: ["Python"],
+		projectTypes: [],
+		operatingSystems: ["Windows", "Linux", "macOS", "ChromeOS"],
+		level: "Beginner",
+		link: "https://python.coderius.nl/",
+		order: {
+			vwo: 2,
+			havo: 2,
+		}
+	},
+	{
 		title: "Python Play",
 		labels: [],
 		programmingLanguages: ["Python"],
