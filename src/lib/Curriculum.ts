@@ -69,6 +69,19 @@ export let curriculum: Activity[] = [
 		}
 	},
 	{
+		title: 'coderius-ctf',
+		labels: [],
+		programmingLanguages: [],
+		projectTypes: ["Cybersecurity"],
+		operatingSystems: ["Windows", "Linux", "macOS"],
+		level: "Beginner",
+		link: "https://ctf.coderius.nl/",
+		order: {
+			vwo: 2,
+			havo: 2,
+		}
+	},
+	{
 		title: "Robotica",
 		labels: ["Robotics", "Python"],
 		programmingLanguages: ["Python"],
@@ -96,9 +109,9 @@ export let curriculum: Activity[] = [
 	},
 	{
 		title: "Vulnerable Web Application",
-		labels: ["Security", "Web"],
+		labels: ["Cybersecurity", "Web"],
 		programmingLanguages: ["Linux Shell"],
-		projectTypes: ["Security", "Web Development"],
+		projectTypes: ["Cybersecurity", "Web Development"],
 		operatingSystems: ["Windows", "Linux"],
 		level: "Advanced",
 		link: "https://dvwa.coderius.nl/",
