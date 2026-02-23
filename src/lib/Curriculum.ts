@@ -51,8 +51,8 @@ export let curriculum: Activity[] = [
 		level: "Beginner",
 		link: "https://play.coderius.nl/",
 		order: {
-			vwo: 2,
-			havo: 2,
+			vwo: 3,
+			havo: 3,
 		}
 	},
 	{
@@ -69,7 +69,20 @@ export let curriculum: Activity[] = [
 		}
 	},
 	{
-		title: 'coderius-ctf',
+		title: "Robotica",
+		labels: ["Robotics", "Python"],
+		programmingLanguages: ["Python"],
+		projectTypes: ["Robotics"],
+		operatingSystems: ["Windows", "Linux", "macOS"],
+		level: "Medium",
+		link: "https://robotica.coderius.nl/",
+		order: {
+			vwo: 4,
+			havo: 4,
+		}
+	},
+	{
+		title: 'Capture the Flag',
 		labels: [],
 		programmingLanguages: [],
 		projectTypes: ["Cybersecurity"],
@@ -77,21 +90,8 @@ export let curriculum: Activity[] = [
 		level: "Beginner",
 		link: "https://ctf.coderius.nl/",
 		order: {
-			vwo: 2,
-			havo: 2,
-		}
-	},
-	{
-		title: "Robotica",
-		labels: ["Robotics", "Python"],
-		programmingLanguages: ["Python"],
-		projectTypes: ["Robotics"],
-		operatingSystems: ["Windows", "Linux", "macOS"],
-		level: "Beginner",
-		link: "https://robotica.coderius.nl/",
-		order: {
-			vwo: 3,
-			havo: 3,
+			vwo: 5,
+			havo: 5,
 		}
 	},
 	{
@@ -103,8 +103,8 @@ export let curriculum: Activity[] = [
 		level: "Medium",
 		link: "https://godot.coderius.nl/",
 		order: {
-			vwo: 5,
-			havo: 5,
+			vwo: 6,
+			havo: 6,
 		}
 	},
 	{
