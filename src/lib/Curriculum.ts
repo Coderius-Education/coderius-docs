@@ -95,11 +95,11 @@ export let curriculum: Activity[] = [
 		}
 	},
 	{
-		title: "Godot Tutorial",
+		title: "Godot game engine",
 		labels: [],
 		programmingLanguages: ["GDScript"],
 		projectTypes: ["Game Development"],
-		operatingSystems: ["Windows", "Linux", "macOS"],
+		operatingSystems: ["Windows", "Linux", "macOS", "ChromeOS"],
 		level: "Medium",
 		link: "https://godot.coderius.nl/",
 		order: {
