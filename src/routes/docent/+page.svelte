@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { curriculum, levelColors } from "$lib/Curriculum.ts";
+	import { ExternalLink } from "@lucide/svelte";
 	import { Badge } from "$lib/components/ui/badge";
-	import { Button } from "$lib/components/ui/button";
 	import * as Card from "$lib/components/ui/card/index.js";
 	import { cn } from "$lib/utils.ts";
 
@@ -15,9 +15,6 @@
 		(c) => (c.level !== "Beginner" || sharedTitles.includes(c.title)) && !excluded.includes(c.title)
 	);
 
-	function openLink(link: string) {
-		window.open(link, "_blank");
-	}
 </script>
 
 <div class="mx-auto w-[96%]">
@@ -44,12 +41,17 @@
 			</p>
 			<Badge variant="outline" class="mt-2">Havo 4 / VWO 4</Badge>
 
-			<div class="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+			<div class="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
 				{#each beginnerCourses as course}
-					<Card.Root class="flex h-full flex-col">
+					<Card.Root>
 						<Card.Header>
-							<div class="flex items-center gap-3">
-								<Card.Title class="text-lg">{course.title}</Card.Title>
+							<div class="flex items-center justify-between gap-3">
+								<Card.Title class="text-lg">
+									<a href={course.link} target="_blank" class="inline-flex items-center gap-1 hover:underline">
+										{course.title}
+										<ExternalLink class="h-4 w-4 shrink-0 text-muted-foreground" />
+									</a>
+								</Card.Title>
 								<Badge
 									variant="default"
 									class={cn("text-xs whitespace-nowrap", levelColors[course.level])}
@@ -58,11 +60,6 @@
 								</Badge>
 							</div>
 						</Card.Header>
-						<Card.Content class="mt-auto">
-							<Button class="w-full" onclick={() => openLink(course.link)}>
-								Bekijk lesmateriaal
-							</Button>
-						</Card.Content>
 					</Card.Root>
 				{/each}
 			</div>
@@ -79,12 +76,17 @@
 			</p>
 			<Badge variant="outline" class="mt-2">Havo 5 / VWO 5-6</Badge>
 
-			<div class="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+			<div class="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
 				{#each advancedCourses as course}
-					<Card.Root class="flex h-full flex-col">
+					<Card.Root>
 						<Card.Header>
-							<div class="flex items-center gap-3">
-								<Card.Title class="text-lg">{course.title}</Card.Title>
+							<div class="flex items-center justify-between gap-3">
+								<Card.Title class="text-lg">
+									<a href={course.link} target="_blank" class="inline-flex items-center gap-1 hover:underline">
+										{course.title}
+										<ExternalLink class="h-4 w-4 shrink-0 text-muted-foreground" />
+									</a>
+								</Card.Title>
 								<Badge
 									variant="default"
 									class={cn("text-xs whitespace-nowrap", levelColors[course.level])}
@@ -93,11 +95,6 @@
 								</Badge>
 							</div>
 						</Card.Header>
-						<Card.Content class="mt-auto">
-							<Button class="w-full" onclick={() => openLink(course.link)}>
-								Bekijk lesmateriaal
-							</Button>
-						</Card.Content>
 					</Card.Root>
 				{/each}
 			</div>

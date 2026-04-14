@@ -1,5 +1,6 @@
 <script lang="ts">
 import { levelColors, ownCurriculum } from "$lib/Curriculum.ts";
+import { ExternalLink } from "@lucide/svelte";
 import { Badge } from "$lib/components/ui/badge";
 import { Button } from "$lib/components/ui/button";
 import * as Card from "$lib/components/ui/card/index.js";
@@ -58,14 +59,11 @@ function handleFilterChange(newFilters: typeof selectedFilters) {
 	selectedFilters = newFilters;
 }
 
-function openLink(link: string) {
-	window.open(link, "_blank");
-}
 </script>
 
 <div class="mx-auto w-[96%]">
-	<div class="mb-12 mt-8">
-		<h1 class="text-center text-5xl font-bold">Coderius Education</h1>
+	<div class="mb-4 mt-6">
+		<h1 class="text-center text-3xl font-bold">Coderius Education</h1>
 	</div>
 
 	<div>
@@ -82,12 +80,17 @@ function openLink(link: string) {
 			<p class="text-sm text-white-600">{filteredCurriculum.length} cursussen gevonden</p>
 		</div>
 
-		<div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+		<div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
 			{#each filteredCurriculum as curriculum}
-				<Card.Root class="flex h-full flex-col">
+				<Card.Root>
 					<Card.Header>
-						<div class="flex items-center gap-3">
-							<Card.Title class="text-lg">{curriculum.title}</Card.Title>
+						<div class="flex items-center justify-between gap-3">
+							<Card.Title class="text-lg">
+								<a href={curriculum.link} target="_blank" class="inline-flex items-center gap-1 hover:underline">
+									{curriculum.title}
+									<ExternalLink class="h-4 w-4 shrink-0 text-muted-foreground" />
+								</a>
+							</Card.Title>
 							<Badge
 								variant="default"
 								class={cn('text-xs whitespace-nowrap', levelColors[curriculum.level])}
@@ -96,11 +99,6 @@ function openLink(link: string) {
 							</Badge>
 						</div>
 					</Card.Header>
-					<Card.Content class="mt-auto">
-						<Button class="w-full" onclick={() => openLink(curriculum.link)}>
-							Bekijk lesmateriaal
-						</Button>
-					</Card.Content>
 				</Card.Root>
 			{/each}
 		</div>
