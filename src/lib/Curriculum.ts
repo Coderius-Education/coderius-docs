@@ -133,6 +133,19 @@ export let curriculum: Activity[] = [
 			havo: 5,
 		}
 	},
+	{
+		title: "Algoritmes",
+		labels: [],
+		programmingLanguages: ["Python"],
+		projectTypes: ["Algorithms"],
+		operatingSystems: ["Windows", "Linux", "macOS", "ChromeOS"],
+		level: "Medium",
+		link: "https://algoritmes.coderius.nl/",
+		order: {
+			vwo: 7,
+			havo: 7,
+		}
+	},
 ];
 
 export let ownCurriculum: Activity[] = curriculum;
