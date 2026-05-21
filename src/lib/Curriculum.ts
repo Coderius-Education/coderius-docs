@@ -59,7 +59,7 @@ export let curriculum: Activity[] = [
 		title: 'Code Editor',
 		labels: [],
 		programmingLanguages: [],
-		projectTypes: ["Code Editor"],
+		projectTypes: ["VS Code web", "VS Code Python", "git", "GitHub"],
 		operatingSystems: ["Windows", "Linux", "macOS"],
 		level: "Beginner",
 		link: "https://editor.coderius.nl/",
