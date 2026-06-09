@@ -1,3 +1,5 @@
+import type { ExamMapping } from "./ExamProgram";
+
 export type Activity = {
 	title: string;
 	labels: string[]; // Keep for backward compatibility
@@ -6,6 +8,9 @@ export type Activity = {
 	programmingLanguages?: string[];
 	projectTypes?: string[];
 	operatingSystems?: string[];
+
+	// Examenprogramma-raakvlakken (havo/vwo informatica)
+	examDomains?: ExamMapping[];
 
 	level: "Beginner" | "Medium" | "Advanced";
 	link: string;
@@ -22,6 +27,12 @@ export let curriculum: Activity[] = [
 		programmingLanguages: ["HTML", "CSS"],
 		projectTypes: ["Web Development"],
 		operatingSystems: ["Windows", "Linux", "macOS", "ChromeOS"],
+		examDomains: [
+			{ code: "C3", strength: "strong" },
+			{ code: "C4", strength: "weak" },
+			{ code: "D1", strength: "strong" },
+			{ code: "F1", strength: "weak" },
+		],
 		level: "Beginner",
 		link: "https://web.coderius.nl/",
 		order: {
@@ -35,6 +46,12 @@ export let curriculum: Activity[] = [
 		programmingLanguages: ["Python"],
 		projectTypes: [],
 		operatingSystems: ["Windows", "Linux", "macOS", "ChromeOS"],
+		examDomains: [
+			{ code: "B1", strength: "weak" },
+			{ code: "C5", strength: "weak" },
+			{ code: "D1", strength: "strong" },
+			{ code: "D2", strength: "strong" },
+		],
 		level: "Beginner",
 		link: "https://python.coderius.nl/",
 		order: {
@@ -48,6 +65,12 @@ export let curriculum: Activity[] = [
 		programmingLanguages: ["Python"],
 		projectTypes: ["Game Development"],
 		operatingSystems: ["Windows", "Linux", "macOS"],
+		examDomains: [
+			{ code: "B1", strength: "strong" },
+			{ code: "C5", strength: "weak" },
+			{ code: "D1", strength: "strong" },
+			{ code: "F1", strength: "weak" },
+		],
 		level: "Beginner",
 		link: "https://play.coderius.nl/",
 		order: {
@@ -61,6 +84,8 @@ export let curriculum: Activity[] = [
 		programmingLanguages: [],
 		projectTypes: ["VS Code web", "VS Code Python", "git", "GitHub"],
 		operatingSystems: ["Windows", "Linux", "macOS"],
+		// Geen examDomains: het instrumentarium (editor, git, GitHub) valt onder domein A
+		// dat we bewust niet meenemen in de mapping.
 		level: "Beginner",
 		link: "https://editor.coderius.nl/",
 		order: {
@@ -74,6 +99,13 @@ export let curriculum: Activity[] = [
 		programmingLanguages: ["Python"],
 		projectTypes: ["Robotics"],
 		operatingSystems: ["Windows", "Linux", "macOS"],
+		examDomains: [
+			{ code: "B1", strength: "weak" },
+			{ code: "D1", strength: "strong" },
+			{ code: "E1", strength: "weak" },
+			{ code: "M1", strength: "strong" },
+			{ code: "M2", strength: "strong" },
+		],
 		level: "Medium",
 		link: "https://robotica.coderius.nl/",
 		order: {
@@ -87,6 +119,14 @@ export let curriculum: Activity[] = [
 		programmingLanguages: [],
 		projectTypes: ["Cybersecurity"],
 		operatingSystems: ["Windows", "Linux", "macOS"],
+		examDomains: [
+			{ code: "E2", strength: "strong" },
+			{ code: "F2", strength: "weak" },
+			{ code: "F3", strength: "weak" },
+			{ code: "F4", strength: "weak" },
+			{ code: "N1", strength: "strong" },
+			{ code: "N2", strength: "strong" },
+		],
 		level: "Beginner",
 		link: "https://ctf.coderius.nl/",
 		order: {
@@ -100,6 +140,13 @@ export let curriculum: Activity[] = [
 		programmingLanguages: ["GDScript"],
 		projectTypes: ["Game Development"],
 		operatingSystems: ["Windows", "Linux", "macOS", "ChromeOS"],
+		examDomains: [
+			{ code: "B1", strength: "weak" },
+			{ code: "D1", strength: "strong" },
+			{ code: "F1", strength: "strong" },
+			{ code: "O3", strength: "weak" },
+			{ code: "P2", strength: "strong" },
+		],
 		level: "Medium",
 		link: "https://godot.coderius.nl/",
 		order: {
@@ -113,6 +160,12 @@ export let curriculum: Activity[] = [
 		programmingLanguages: ["Linux Shell"],
 		projectTypes: ["Cybersecurity", "Web Development"],
 		operatingSystems: ["Windows", "Linux"],
+		examDomains: [
+			{ code: "E2", strength: "strong" },
+			{ code: "L4", strength: "weak" },
+			{ code: "N1", strength: "strong" },
+			{ code: "N2", strength: "weak" },
+		],
 		level: "Advanced",
 		link: "https://dvwa.coderius.nl/",
 		order: {
@@ -126,6 +179,14 @@ export let curriculum: Activity[] = [
 		programmingLanguages: ["HTML", "CSS", "JavaScript", "Python"],
 		projectTypes: ["Web Development"],
 		operatingSystems: ["Windows", "Linux", "macOS"],
+		examDomains: [
+			{ code: "D1", strength: "strong" },
+			{ code: "E1", strength: "strong" },
+			{ code: "F1", strength: "strong" },
+			{ code: "H1", strength: "weak" },
+			{ code: "L2", strength: "weak" },
+			{ code: "O3", strength: "weak" },
+		],
 		level: "Advanced",
 		link: "https://fullstack.coderius.nl/",
 		order: {
@@ -139,6 +200,14 @@ export let curriculum: Activity[] = [
 		programmingLanguages: ["Python"],
 		projectTypes: ["Algorithms"],
 		operatingSystems: ["Windows", "Linux", "macOS", "ChromeOS"],
+		examDomains: [
+			{ code: "B1", strength: "strong" },
+			{ code: "B2", strength: "strong" },
+			{ code: "B4", strength: "weak" },
+			{ code: "D1", strength: "weak" },
+			{ code: "G1", strength: "weak" },
+			{ code: "I1", strength: "weak" },
+		],
 		level: "Medium",
 		link: "https://algoritmes.coderius.nl/",
 		order: {
